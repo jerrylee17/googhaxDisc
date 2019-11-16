@@ -1,7 +1,8 @@
 const example = require(`/app/example.js`);
 exports.run = async (bot, message, args) => {
   //if (!message.member.hasPermission("ADMINISTRATOR")) return;
-  message.guild.channels.filter(channel => channel.type == 'category' && channel.name.toUpperCase() == args.toUpperCase()).forEach( cat => {
+  args = args.join('').toUpperCase();
+  message.guild.channels.filter(channel => channel.type == 'category' && channel.name.toUpperCase() == args).forEach( cat => {
     cat.children.forEach(ch => ch.delete())
     cat.delete();
   }

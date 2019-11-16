@@ -7,7 +7,7 @@ exports.run = async (bot, message, args) => {
 
 exports.help = {
   name: ["d"],
-  desc: "(DEV ONLY) Test command",
+  desc: "Delete messages (commands only)",
   admin: true,
   include: false
 };

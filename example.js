@@ -21,6 +21,15 @@ module.exports = {
       //msg = "Date is " + json.Date + ".\nThe link is "+ ch_link;
       //var category = guild.channels.filter(channel => channel.type == 'category' && channel.name == ch_cat).first();
       //if(!category) category = await guild.createChannel(ch_cat, { name: ch_cat , type: "category" });
+      // if (ch_cat.toLowerCase() == "event" || ch_cat.toLowerCase() == "workshop"){
+      //   var announce = guild.channels
+      //     .filter(channel => 
+      //       channel.type == "text" && 
+      //       channel.name && 
+      //       channel.name.toLowerCase() == "announcements"
+      //     );
+      // }
+        
       var filter = guild.channels
         .filter(
           channel =>
@@ -28,9 +37,9 @@ module.exports = {
             channel.name &&
             channel.name.toUpperCase() == ch_cat.toUpperCase()
         );
-      while(!filter){console.log('xd')};
+      // while(!filter){console.log('xd')};
       var category = filter.first();
-      if (category) console.log(category.name);
+      // if (category) console.log(category.name);
       if(!category) category = await guild.createChannel(ch_cat, { type: "category" });
       guild
         .createChannel(ch_name, {
